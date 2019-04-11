@@ -1,0 +1,9 @@
+.placeholder {
+	display: flex;
+	flex-direction: row;
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+}
