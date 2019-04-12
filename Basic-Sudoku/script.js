@@ -65,12 +65,11 @@ generateButton.addEventListener('click', function() {
 			textarea.innerText = board[i];
 		}
 		textarea.setAttribute('data-letter-index', i);
-		// textarea.style.height = '40px';
-		// textarea.style.width = '40px';
+		textarea.style.height = '40px';
+		textarea.style.width = '40px';
 		textarea.style.borderWidth = '1px';
 		textarea.style.borderColor = 'black';
 		textarea.style.borderStyle = 'solid';
-		// textarea.style.display = 'inline-block';
 		visiboard.appendChild(textarea);
 	}
 });
