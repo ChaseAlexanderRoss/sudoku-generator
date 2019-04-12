@@ -1,9 +1,1 @@
-.sudokuBoard {
-	display: grid;
-	grid-template-rows: 9;
-	grid-template-columns: 9;
-}
 
-.difficulty {
-	display: none;
-}

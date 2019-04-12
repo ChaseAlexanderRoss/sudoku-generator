@@ -1,5 +1,3 @@
-visiboard = document.querySelector('.sudokuBoard');
-generateButton = document.querySelector('.generate');
 easyButton = document.querySelector('.easy');
 mediumButton = document.querySelector('.medium');
 hardButton = document.querySelector('.hard');
@@ -7,46 +5,71 @@ veryHardButton = document.querySelector('.veryHard');
 insaneButton = document.querySelector('.insane');
 inhumanButton = document.querySelector('.inhuman');
 difficultyNumber = document.querySelector('.difficulty');
+visiboard = document.querySelector('.sudokuBoard');
+generateButton = document.querySelector('.generate');
 
-//Difficulty Buttons
+//Difficulty Buttons (sets the difficulty for the puzzle)
 easyButton.addEventListener('click', function() {
 	let dN = 62;
 	difficultyNumber.innerText = dN;
+	difficultyNumber.style.display = 'none';
 	return dN;
 });
 
 mediumButton.addEventListener('click', function() {
 	let dN = 53;
 	difficultyNumber.innerText = dN;
+	difficultyNumber.style.display = 'none';
 	return dN;
 });
 
 hardButton.addEventListener('click', function() {
 	let dN = 44;
 	difficultyNumber.innerText = dN;
+	difficultyNumber.style.display = 'none';
 	return dN;
 });
 
 veryHardButton.addEventListener('click', function() {
 	let dN = 35;
 	difficultyNumber.innerText = dN;
+	difficultyNumber.style.display = 'none';
 	return dN;
 });
 
 insaneButton.addEventListener('click', function() {
 	let dN = 26;
 	difficultyNumber.innerText = dN;
+	difficultyNumber.style.display = 'none';
 	return dN;
 });
 
 inhumanButton.addEventListener('click', function() {
 	let dN = 17;
 	difficultyNumber.innerText = dN;
+	difficultyNumber.style.display = 'none';
 	return dN;
 });
 
+//Generates the numbers for the board
 generateButton.addEventListener('click', function() {
+	visiboard.innerText = '';
 	dN = parseInt(difficultyNumber.innerHTML, 10);
 	board = sudoku.generate(dN);
-	visiboard.innerText = board;
+	board = board.split('');
+	for (let i = 0; i < board.length; i++) {
+		let span = document.createElement('span');
+		if (board[i] == '.') {
+			span.innerText = '';
+		} else {
+			span.innerText = board[i];
+		}
+		span.setAttribute('data-letter-index', i);
+		span.style.height = '20px';
+		span.style.borderWidth = '1px';
+		span.style.borderColor = 'black';
+		span.style.borderStyle = 'solid';
+		visiboard.appendChild(span);
+		visiboard.style.display = 'grid';
+	}
 });
