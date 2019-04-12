@@ -58,18 +58,19 @@ generateButton.addEventListener('click', function() {
 	board = sudoku.generate(dN);
 	board = board.split('');
 	for (let i = 0; i < board.length; i++) {
-		let span = document.createElement('span');
+		let div = document.createElement('div');
 		if (board[i] == '.') {
-			span.innerText = '';
+			div.innerText = '';
 		} else {
-			span.innerText = board[i];
+			div.innerText = board[i];
 		}
-		span.setAttribute('data-letter-index', i);
-		span.style.height = '20px';
-		span.style.borderWidth = '1px';
-		span.style.borderColor = 'black';
-		span.style.borderStyle = 'solid';
-		visiboard.appendChild(span);
-		visiboard.style.display = 'grid';
+		div.setAttribute('data-letter-index', i);
+		div.style.height = '20px';
+		div.style.width = '20px';
+		div.style.borderWidth = '1px';
+		div.style.borderColor = 'black';
+		div.style.borderStyle = 'solid';
+		// div.style.display = 'inline-block';
+		visiboard.appendChild(div);
 	}
 });
