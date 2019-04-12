@@ -1,5 +1,18 @@
+body {
+	background-color: black;
+	color: white;
+}
+
+h1,
+.difficultyButtons,
+.generateButton,
+.sudokuBoard {
+	display: flex;
+	justify-content: center;
+}
+
 .sudokuBoard {
 	display: grid;
-	grid-template-columns: 20px 20px 20px 20px 20px 20px 20px 20px 20px;
-	grid-template-rows: 20px 20px 20px 20px 20px 20px 20px 20px 20px;
+	grid-template-columns: 40px 40px 40px 40px 40px 40px 40px 40px 40px;
+	grid-template-rows: 40px 40px 40px 40px 40px 40px 40px 40px 40px;
 }
